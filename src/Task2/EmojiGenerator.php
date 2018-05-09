@@ -4,8 +4,8 @@ namespace Cryptocurrency\Task2;
 
 class EmojiGenerator
 {
-    public function generate(): \Generator
+    public function generate(): 
     {
-        // @todo
+        //TODO: Implement emoji generator using yield
     }
 }
