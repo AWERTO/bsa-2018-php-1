@@ -2,12 +2,13 @@
 
 require __DIR__ . '/../../vendor/autoload.php';
 
-use Cryptocurrency\Task1\CoinMarket;
 use Cryptocurrency\Task3\MarketHtmlPresenter;
+use Cryptocurrency\Task1\CoinMarket;
+
 
 // Fill in your market with currencies and use your presenter to show data here:
 $market = new CoinMarket();
-$marketPresenter = new MarketHtmlPresenter();
+$marketPresenter = new MarketHtmlPresenter($currencies);
 $presentation = $marketPresenter->present($market);
 
 ?>
@@ -22,6 +23,6 @@ $presentation = $marketPresenter->present($market);
     <title>Built-in Web Server</title>
 </head>
 <body>
-<?php echo $presentation ?>
+    <?php echo $presentation ?>
 </body>
 </html>
