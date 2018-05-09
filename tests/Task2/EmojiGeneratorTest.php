@@ -11,7 +11,15 @@ class EmojiGeneratorTest extends TestCase
      * @var EmojiGenerator
      */
     private $generator;
-
+    
+    protected function setUp()
+    {
+        parent::setUp();
+        
+        $this->generator = new EmojiGenerator();
+    }
+    
+    
     /**
      * @dataProvider emojiDataProvider
      * @param $expected
@@ -30,10 +38,5 @@ class EmojiGeneratorTest extends TestCase
         ];
     }
 
-    protected function setUp()
-    {
-        parent::setUp();
-
-        $this->generator = new EmojiGenerator();
-    }
+ 
 }
