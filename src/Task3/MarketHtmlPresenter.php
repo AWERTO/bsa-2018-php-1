@@ -3,19 +3,23 @@
 namespace Cryptocurrency\Task3;
 
 use Cryptocurrency\Task1\CoinMarket;
+use Cryptocurrency\Task1\Currency;
 
 class MarketHtmlPresenter
 {
-    private $currencies;
-    
-    public function __construct(array $currencies)
-    {
-        $this->currencies = $currencies;
-    }
-    
     public function present(CoinMarket $market): string
     {
-        // @todo
-        return '';
+        $coinsList = '<ul>';
+        foreach($market->getCurrencies() as $currency){
+            /**
+             * @var Currency $currency
+             */
+            $coinsList .= '<li>' .
+                    "<img src=\"{$currency->getLogoUrl()}\">" .
+                    "<p>{$currency->getName()}: {$currency->getDailyPrice()}</p>" .
+                '</li>';
+        }
+        $coinsList .= '</ul>';
+        return $coinsList;
     }
 }
